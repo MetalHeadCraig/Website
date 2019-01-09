@@ -1,0 +1,45 @@
+/**
+* background color - white
+* text color - black
+* primary color - #937cfb
+* primary text color - black
+* primary highlight color - #5f4fc7
+* secondary color - #03dac5
+* secondary text color - white
+**/
+
+.form, .contact {
+    margin: 10px;
+    padding: 10px 20px;
+    width: 85%;
+    min-height: 100px;
+    position: relative;
+    left: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 85%;
+    min-height: 25px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+#submit {
+    width: 127px;
+    height: 38px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+.contact h3 {
+    text-align: center;
+}

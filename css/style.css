@@ -1,53 +1,72 @@
 /**
 * background color - white
 * text color - black
-* primary color - #469CFF
+* primary color - #937cfb
 * primary text color - black
-* primary highlight color - #32A8FF
-* secondary color - #404dff
+* primary highlight color - #5f4fc7
+* secondary color - #03dac5
 * secondary text color - white
 **/
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header, footer {
-    background-color: #469CFF;
+    background-color: #937cfb;
     padding: 15px 15px;
 }
 
 #name {
     font-size: x-large;
     text-transform: uppercase;
-    left: 20px;
 }
 
 header container {
     position: absolute;
-    right: 150px;
+    right: 10%;
+    flex-grow: 1;
+}
+
+header span {
+    display: inline-block;
+    flex-grow: 1;
 }
 
 button {
-    background-color: #469CFF;
+    background-color: inherit;
     font-size: 18px;
     border: none;
     border-radius: 12px;
-    margin: 0 0 50px 0;
 }
 
 button:hover {
-    background-color: #32A8FF;
+    background-color: #5f4fc7;
+}
+
+.active {
+    border-bottom: 2px solid #03dac5;
 }
 
 #logo {
     position: absolute;
-    right: 20px;
+    right: 1.5%;
+    top: 2.5%;
+}
+img {
+    max-width: 9%;
+    max-height: 9%;
 }
 
 .about, .podcasts {
     margin: 10px;
-    padding: 10px;
+    padding: 10px 20px;
     width: 85%;
     min-height: 100px;
     position: relative;
     left: 25px;
+    background-color: #f1f1f1;
 }
 
 h1 {
@@ -56,24 +75,38 @@ h1 {
 
 body {
     position: absolute;
-    height: 97%;
     background-color: #f1f1f1;
+    right: 0px;
+    left: 0px;
 }
 
 .podcasts h3 {
     text-align: center;
 }
 
+#media {
+    display: none;
+}
+
 .social {
     position: fixed;
     display: flex;
     flex-direction: column;
-    right: 20px;
+    right: 1.5%;
     top: 75px;
-
 }
 
-.social .fab {
+#social-call {
+    border-radius: 50%;
+    background-color: #03dac5;
+    padding: 15px;
+    right: 1.5%;
+    top: 75px;
+    position: fixed;
+    display: block;
+}
+
+.social a {
     font-size: 34px;
     padding: 3px;
     align-self: center;
@@ -103,6 +136,8 @@ footer {
     color: #000;
     text-align: center;
 }
+
+
 
 
 
