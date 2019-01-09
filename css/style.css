@@ -104,6 +104,7 @@ body {
     top: 75px;
     position: fixed;
     display: block;
+    cursor: pointer;
 }
 
 .social a {

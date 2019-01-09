@@ -25,6 +25,11 @@ label {
 input, textarea {
     width: 85%;
     min-height: 25px;
+    border-radius: 5px;
+}
+
+input:active, textarea:active {
+    border-color: #03dac5;
 }
 
 textarea {
