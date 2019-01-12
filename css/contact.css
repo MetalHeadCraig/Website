@@ -28,7 +28,7 @@ input, textarea {
     border-radius: 5px;
 }
 
-input:active, textarea:active {
+input:focus, textarea:focus {
     border-color: #03dac5;
 }
 
