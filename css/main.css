@@ -134,6 +134,17 @@ h1 {
   color: #000000;
 }
 
+#podcast-call {
+  border-radius: 50%;
+  background-color: #03dac5;
+  padding: 15px;
+  right: 1.5%;
+  top: 85px;
+  position: fixed;
+  display: block;
+  cursor: pointer;
+}
+
 hr {
   width: 90%;
 }
