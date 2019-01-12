@@ -7,7 +7,11 @@
     </div></div>
 
 <i class="fas fa-podcast accent shadow--6dp" id="podcast-call"></i>
+<<<<<<< HEAD
 	<div id="pmedia"><div class="podcast shadow--2dp">
+=======
+	<div id="media"><div class="podcast shadow--2dp">
+>>>>>>> master
 		<a href="#"><i class="fab fa-spotify"></i></a>
 		<a href="#"><i class="fab fa-soundcloud"></i></a>
 		<a href="#"><i class="fab fa-google"></i></a>

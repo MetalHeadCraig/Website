@@ -140,6 +140,7 @@ h1 {
   color: #000000;
 }
 
+<<<<<<< HEAD
 .podcast {
   position: fixed;
   display: flex;
@@ -158,6 +159,17 @@ h1 {
   display: block;
   cursor: pointer;
   color: #000;
+=======
+#podcast-call {
+  border-radius: 50%;
+  background-color: #03dac5;
+  padding: 15px;
+  right: 1.5%;
+  top: 85px;
+  position: fixed;
+  display: block;
+  cursor: pointer;
+>>>>>>> master
 }
 
 hr {
