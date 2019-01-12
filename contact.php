@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="css/contact.css" />
 <?php 
 $page = "contact";
 include 'includes/overall/header.php'; 
 ?>
+<link rel="stylesheet" href="css/contact.css" />
     <h1>Contact Us</h1>
 	<div class="form shadow--3dp">
             <form>
