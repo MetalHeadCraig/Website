@@ -9,7 +9,7 @@ var pmedia = document.getElementById ('pmedia');
 var social = document.getElementById ('social-call');
 var podcast = document.getElementById ('podcast-call');
 
-/*window.onclick = function(event) {
+window.onclick = function(event) {
   if (event.target == social) {
     smedia.style.display = "block";
     social.style.display = "none";    
@@ -20,7 +20,7 @@ var podcast = document.getElementById ('podcast-call');
     social.style.display = "block";
   }
 
-  else if (event.target == podcast) {
+  if (event.target == podcast) {
     pmedia.style.display = "block";
     podcast.style.display = "none";
   }
@@ -29,18 +29,4 @@ var podcast = document.getElementById ('podcast-call');
     pmedia.style.display = "none";
     podcast.style.display = "block";
   }
-}
-*/
-
-switch(event) {
-  case (event.target == social): 
-    smedia.style.display = "block";
-    social.style.display = "none";
-  break;
-  case (event.target == podcast):
-    pmedia.style.display = "block";
-    podcast.style.display = "none";
-  break;
-  default: smedia.style.display = "none"
-  pmedia.style.display = "none"
 }

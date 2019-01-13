@@ -9,12 +9,9 @@
 **/
 
 .form, .contact {
-    margin: 10px;
     padding: 10px 20px;
-    width: 85%;
-    min-height: 100px;
+    min-height: 100%;
     position: relative;
-    left: 25px;
 }
 
 label {

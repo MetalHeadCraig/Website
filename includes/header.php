@@ -1,4 +1,5 @@
-		<header class="shadow--6dp">
+		<container class="headcont">
+			<header class="shadow--6dp">
 				<span id="name">Some Video Game Based Title</span>
 					<container id="pages">
 					<button id="home" onclick="selectButton('#home')" <?php if ($page == "home") {?> class="active" <?php ;} ?>>
@@ -11,4 +12,5 @@
 						<a href="contact.php"><i class="fas fa-file-signature"></i> Contact</a></button>
 					</container>
 				<img src="images/placeholder-logo.png" id="logo">
-		</header>		
+			</header>
+		</container>		
