@@ -6,7 +6,7 @@
 		<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
     </div></div>
 
-<i class="fas fa-podcast accent shadow--6dp" id="podcast-call"></i>
+	<i class="fas fa-podcast accent shadow--6dp" id="podcast-call"></i>
 	<div id="pmedia"><div class="podcast shadow--2dp">
 		<a href="#"><i class="fab fa-spotify"></i></a>
 		<a href="#"><i class="fab fa-soundcloud"></i></a>

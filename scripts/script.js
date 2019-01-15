@@ -5,9 +5,10 @@ $(buttonId).addClass('active');
 
 
 var smedia = document.getElementById ('smedia');
-var pmedia = document.getElementById ('pmedia');
 var social = document.getElementById ('social-call');
+var pmedia = document.getElementById ('pmedia');
 var podcast = document.getElementById ('podcast-call');
+
 
 window.onclick = function(event) {
   if (event.target == social) {
@@ -22,7 +23,7 @@ window.onclick = function(event) {
 
   if (event.target == podcast) {
     pmedia.style.display = "block";
-    podcast.style.display = "none";
+    podcast.style.display = "none";    
   }
 
   else if (event.target !== pmedia) {
