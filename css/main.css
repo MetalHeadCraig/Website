@@ -52,6 +52,7 @@ header {
 header span {
   display: inline-block;
   flex-grow: 1;
+  padding: 5px 0;
 }
 
 /* website title/name on left side of header */
@@ -66,6 +67,7 @@ header span {
   right: 10%;
   flex-grow: 1;
   display: inline-block;
+  padding: 7px 0;
 }
 
 /* navigation buttons themselves */
@@ -88,11 +90,6 @@ button:hover {
   position: absolute;
   right: 1.5%;
   top: 2.5%;
-}
-
-img {
-  max-width: 9%;
-  max-height: 9%;
 }
 
 h1 {
