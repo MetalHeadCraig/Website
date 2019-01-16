@@ -1,11 +1,11 @@
 /**
-* background color - white
+* background color - #f1f1f1
 * text color - black
 * primary color - #937cfb
 * primary text color - black
 * primary highlight color - #5f4fc7
 * secondary color - #03dac5
-* secondary text color - white
+* secondary text color - black
 **/
 
 .form, .contact {
@@ -25,7 +25,7 @@ label {
 input, textarea {
     width: 85%;
     min-height: 25px;
-    border-radius: 5px;
+    border-radius: 7.5px;
 }
 
 input:focus, textarea:focus {
