@@ -11,10 +11,11 @@ try {
             aname VARCHAR(50) NOT NULL,  /* article name */
             author int(11) NOT NULL, /* who posted */
             article text(5000), /* the actual article */
-            adate TIMESTAMP /* date posted, could add time aswel */
+            adate TIMESTAMP /* date and time posted */
             )";
     $conn->exec($sql);
-    echo "Database \"game\" and Table \"article\" created successfully";
+    echo "Database \"game\" and Table \"article\" created successfully <br>";
+    echo "click <a href=\"insert.php\">HERE </a> to insert data";
 }
 catch(PDOException $e)
 {
