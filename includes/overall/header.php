@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 	<html lang="en">
 
-<?php include 'includes/head.php'; ?>
+<?php 
+include 'db/connect.php';
+include 'includes/head.php'; 
+?>
 
 	<body>
 

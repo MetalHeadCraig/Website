@@ -131,6 +131,11 @@ h1 {
   border-radius: 6px;
 }
 
+.date {
+  float: right;
+  font-weight: bold;
+}
+
 #smedia, #pmedia {
   display: none;
 }
@@ -264,5 +269,14 @@ footer {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+}
+
+/* header */
+@media screen and (max-width: 880px) {
+  header {
+    width: 100%;
+    display: block;
+    padding: 10px 10px;
   }
 }
