@@ -48,17 +48,13 @@ include 'includes/overall/header.php';
 
 		<div class="row">
 			<center><h3>Social Feed</h3></center>
-  			<div class="column shadow--3dp">
-    			<div class="card">
+  			<div class="column shadow--3dp card">
 					<h4><b>Facebook</b></h4>
 					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSNVGS%2F&tabs=timeline%2Cevents%2Cmessages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=156184084430790" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-				</div>
 			</div>
-			<div class="column shadow--3dp">
-    			<div class="card">
+			<div class="column shadow--3dp card">
 					<h4><b>Twitter</b></h4>
 					<a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/SNVGS"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-				</div>
 			</div>
 		</div>
 		<br>
