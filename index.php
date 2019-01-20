@@ -41,7 +41,7 @@ include 'includes/overall/header.php';
 			?>
 		</div>
 		<div style="float: right;">
-			<a href="article.php">View more articles from the Archive</a>
+			<a href="articles.php">View more articles from the Archive</a>
 		</div>
 			
 			<br>

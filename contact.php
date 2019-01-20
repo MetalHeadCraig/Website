@@ -4,8 +4,8 @@ include 'includes/overall/header.php';
 ?>
 <link rel="stylesheet" href="css/contact.css" />
     <h1>Contact Us</h1>
-	<div class="form shadow--3dp">
-            <form>
+	<div class="card shadow--3dp">
+            <form method="Post">
                     <label>Name</label>
                     <input name="Name" placeholder="John Doe">
 
@@ -16,13 +16,20 @@ include 'includes/overall/header.php';
                     <input name="subject" placeholder="I love your show">
                             
                     <label>Message</label>
-                    <textarea name="message" placeholder="Message..."></textarea>
+                    <textarea name="message" placeholder="I am an expanding box.
+I only expand vertically.
+I adjust based on the amount of text that overflows
+
+
+100px in height"></textarea>
+
+                    <input id="reset" name="reset" type="reset" value="Reset">
 
                     <input id="submit" name="submit" type="submit" value="Submit">
                 
             </form>
     </div>
-   <div class="contact shadow--3dp">
+   <div class="card shadow--3dp">
        <p>Some stuff can go here</p>
        <br>
        <br>

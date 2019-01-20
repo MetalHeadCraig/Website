@@ -20,7 +20,6 @@ include 'includes/overall/header.php';
         <br>
         <p>Still here?</p>
     </div>
-    <br>
    <div class="card shadow--3dp">
        <h3>Podcasts go here</h3>
         <p>This is where we place the podcast links/widget for listening to the one that generates the most income, like this one below</p>

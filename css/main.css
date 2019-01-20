@@ -76,6 +76,7 @@ button {
   font-size: 18px;
   border: none;
   border-radius: 12px;
+  padding: 4px 4px 2px;
 }
 
 button:hover {
@@ -107,7 +108,6 @@ h1 {
   float: left;
   width: 48%;
   padding: 10px;
-  margin: 5px;
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -129,11 +129,14 @@ h1 {
   background-color: #ffffff;
   min-height: 240px;
   border-radius: 6px;
+  margin: 10px;
 }
 
 .date {
   float: right;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: smaller;
 }
 
 #smedia, #pmedia {
