@@ -1,0 +1,76 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+}
+
+/* unvisited link */
+ul a:link {
+    text-decoration: none;
+  }
+  
+  /* mouse over link */
+ul a:hover {
+    color: purple;
+    text-decoration: underline;
+  }
+  
+  /* selected link */
+ul a:active {
+    color: blue;
+    text-decoration: none;
+  }
+
+  /* Style the input container */
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Style the form icons */
+  .icon, .sp {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .sp {
+    cursor: pointer;
+  }
+  
+  /* Style the input fields */
+  .input-field {
+    width: 50%;
+    min-height: 25px;
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: floralwhite;
+  }
+  
+  .input-field:focus {
+    border: 2px solid dodgerblue;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
