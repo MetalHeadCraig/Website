@@ -18,11 +18,12 @@ include 'head.php';
 
 		<?php include '../includes/header.php'; ?>
 
-		<!-- Sidebar -->
+		<!-- Sidebar
 
 		<aside>
 			<?php include '../includes/sidebar.php'; ?>
 		</aside>
+		-->
 
 		<!-- Page content -->
 		
