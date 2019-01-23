@@ -144,4 +144,3 @@ if(isset($_POST['login'])){
 </form>
 
 <?php include 'includes/footer.php'; ?>
->>>>>>> a4f66c3da4df8d65be8a6746d91bc9ea5210f4d7
