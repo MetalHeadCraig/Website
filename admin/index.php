@@ -23,16 +23,16 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 <h3><span id="welcome"></span><?php echo $data['firstname'] . "!"; ?></h3>
 
 <ul>
-<li><a href="#">Update detalis</a></li>
-<li><a href="changepassword.php">Change Password</a></li>
-<li><a href="#">Add Article</a></li>
-<li><a href="logout.php">Log out</a></li>
+<li class="shadow--3dp"><a href="#"><i class="fas fa-user-alt"></i><div>  Update details</div></a></li>
+<li class="shadow--3dp"><a href="changepassword.php"><i class="fas fa-key"></i><div>  Change Password</div></a></li>
+<li class="shadow--3dp"><a href="#"><i class="fas fa-address-card"></i><div>  Add Article</div></a></li>
+<li class="shadow--3dp"><a href="logout.php"><i class="fas fa-sign-out-alt"></i><div>  Log out</div></a></li>
 </ul>
 
 <?php
 if ($data['userlvl'] == 1) { ?>
-<p>If user is Craig, Tim or Cameron show advanced stuff like, Website traffic, and other stuff I can't think of at the moment.</p>
-
+<!--<p>If user is Craig, Tim or Cameron show advanced stuff like, Website traffic, and other stuff I can't think of at the moment.</p>
+-->
 
 <?php
     } 

@@ -19,9 +19,9 @@ include 'includes/overall/header.php';
                     <textarea name="message" placeholder="I am an expanding box.
 I only expand vertically.
 I adjust based on the amount of text that overflows
-
-
-100px in height"></textarea>
+100px
+in
+height"></textarea>
 
                     <input id="reset" name="reset" type="reset" value="Reset">
 
