@@ -48,9 +48,6 @@ if(isset($_POST['login'])){
 }
 ?>
 
-<h1>Admin portal!</h1>
-
-<div class="card shadow--3dp">
 <h3>Login</h3>
 
 <?php echo "email: " . $email; ?>
@@ -68,23 +65,7 @@ if(isset($_POST['login'])){
     <i toggle="#password" class="far fa-eye sp fa-1x toggle-password"></i>
   </div>
 
- <button class="btn" type="submit" name="login" name="login">Login</button>
+ <button class="btn" type="submit" id="login" name="login">Login</button>
 </form>
 
-
-</div>
-
 <?php include 'includes/footer.php'; ?>
-
-<script>
- $(".toggle-password").click(function() {
-
-$(this).toggleClass("fa-eye fa-eye-slash");
-var input = $($(this).attr("toggle"));
-if (input.attr("type") == "password") {
-  input.attr("type", "text");
-} else {
-  input.attr("type", "password");
-}
-});
-</script>

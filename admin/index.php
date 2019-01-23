@@ -2,6 +2,7 @@
 $page = "Admin";
 include 'includes/header.php';
 
+//check if user is logged in
 if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
     //User not logged in. Redirect them back to the login.php page.
     header('Location: login.php');
@@ -19,14 +20,11 @@ $stmt->execute();
 $data = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
-<h1>Admin portal!</h1>
-
-<div class="card shadow--3dp">
 <h3><span id="welcome"></span><?php echo $data['firstname'] . "!"; ?></h3>
 
 <ul>
 <li><a href="#">Update detalis</a></li>
-<li><a href="#">Change Password</a></li>
+<li><a href="changepassword.php">Change Password</a></li>
 <li><a href="#">Add Article</a></li>
 <li><a href="logout.php">Log out</a></li>
 </ul>
@@ -40,18 +38,4 @@ if ($data['userlvl'] == 1) { ?>
     } 
 ?>
 
-</div>
 <?php include 'includes/footer.php'; ?>
-
-<script>
-    var greeting;
-var time = new Date().getHours();
-	if (time < 12) {
-	greeting = "Good Morning, ";
-	} else if (time < 18) {
-	greeting = "Good Afternoon, ";
-	} else {
-	greeting = "Good Evening, ";
-	}
-document.getElementById("welcome").innerHTML += greeting;
-</script>

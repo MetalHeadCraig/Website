@@ -27,3 +27,6 @@ include 'head.php';
 		<!-- Page content -->
 		
 		<div class="content">
+		
+		<h1><a href="index.php">Admin portal!</a></h1>
+		<div class="card shadow--3dp">
