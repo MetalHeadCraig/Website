@@ -50,8 +50,6 @@ if(isset($_POST['login'])){
 
 <h3>Login</h3>
 
-<?php echo "email: " . $email; ?>
-
 <form action="login.php" method="post">
 
   <div class="input-container">
