@@ -7,7 +7,7 @@ session_unset();
 // destroy the session 
 session_destroy(); 
 
-header('Refresh: 5; URL=../index.php');
+header('Refresh: 4; URL=../index.php');
 
 ?>
 

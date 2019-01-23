@@ -35,10 +35,16 @@ if(isset($_POST['login'])){
         if($validPassword){            
             //Provide the user with a login session.
             $_SESSION['user_id'] = $user['id'];
-            $_SESSION['logged_in'] = time();            
-            //Redirect to our admin page
-            header('Location: index.php');
+            $_SESSION['logged_in'] = time();
+            
+            if($user['userlvl'] == -1){
+                // First time login, prompt to change password
+                header('Location: changepassword.php');
+            } else {
+                //Redirect to our admin page
+                header('Location: index.php');
             exit;
+            }
             
         } else{
             //$validPassword was FALSE. Passwords do not match.

@@ -18,7 +18,7 @@ if(isset($_POST['changepassword'])){
      
      
      //Retrieve the users password.
-     $sql = "SELECT password FROM users WHERE id = :id";
+     $sql = "SELECT * FROM users WHERE id = :id";
      $stmt = $conn->prepare($sql);    
      //Bind value.
      $stmt->bindValue(':id', $_SESSION['user_id']);    
@@ -30,8 +30,24 @@ if(isset($_POST['changepassword'])){
      //Check if current passwod matches the database.
      if(password_verify($password, $user['password'])) {
         if($newpassword == $passwordverify) {
-            // Process the update of password
-            echo "New password and Confirm password match";
+            $update = "UPDATE users SET password = :password WHERE id = :id";
+            $stmt = $conn->prepare($update);    
+            //Bind value.
+            $stmt->bindValue(':password', password_hash($newpassword, PASSWORD_DEFAULT)); 
+            $stmt->bindValue(':id', $_SESSION['user_id']);  
+            //Execute.
+            $stmt->execute();
+
+            if($user['userlvl'] == -1) {
+                $userlvl = "UPDATE users SET userlvl = 0 WHERE id = :id";
+                $stmt = $conn->prepare($userlvl);     
+                //Execute.
+                $stmt->execute();
+            }
+            ?>  
+            Password Updated returning to admin page in <span id="counter">5</span> seconds.
+            <?php 
+            header('Refresh: 4; URL=index.php');
         } else {
             // Output message if New and Confirm password do not match
             echo "New password and Confirm password do not match";
@@ -45,12 +61,29 @@ if(isset($_POST['changepassword'])){
 
 <h3>Change Password</h3>
 
+<?php 
+$sql = "SELECT * FROM users WHERE id = :id";
+$stmt = $conn->prepare($sql);    
+//Bind value.
+$stmt->bindValue(':id', $_SESSION['user_id']);    
+//Execute.
+$stmt->execute();    
+//Fetch row.
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if($user['userlvl'] == -1) {
+    ?> <p>As this is your first login, you need to set your password</p> <?php
+} else { ?>
 <form action="changepassword.php" method="post">
 <div class="input-container">
     <i class="fa fa-key icon"></i>
     <input type="password" id="password" name="password" class="input-field" placeholder="Current Password" >
     <i toggle="#password" class="far fa-eye sp fa-1x toggle-password"></i>
 </div>
+<?php
+}
+?>
+
 
 <div class="input-container">
     <i class="fa fa-key icon"></i>
