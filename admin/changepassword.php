@@ -10,25 +10,24 @@ if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
 }
 
 if(isset($_POST['changepassword'])){
-    
-     //Retrieve the field values from our change password form.
-     $password       = !empty($_POST['password'])        ? trim($_POST['password']) : null;
-     $newpassword    = !empty($_POST['newpassword'])     ? trim($_POST['newpassword']) : null;
-     $passwordverify = !empty($_POST['passwordverify'])  ? trim($_POST['passwordverify']) : null;
-     
-     
-     //Retrieve the users password.
-     $sql = "SELECT * FROM users WHERE id = :id";
-     $stmt = $conn->prepare($sql);    
-     //Bind value.
-     $stmt->bindValue(':id', $_SESSION['user_id']);    
-     //Execute.
-     $stmt->execute();    
-     //Fetch row.
-     $user = $stmt->fetch(PDO::FETCH_ASSOC);
- 
-     //Check if current passwod matches the database.
-     if(password_verify($password, $user['password'])) {
+
+    //Retrieve the field values from our change password form.
+    $password       = !empty($_POST['password'])        ? trim($_POST['password']) : null;
+    $newpassword    = !empty($_POST['newpassword'])     ? trim($_POST['newpassword']) : null;
+    $passwordverify = !empty($_POST['passwordverify'])  ? trim($_POST['passwordverify']) : null;
+
+
+    //Retrieve the users password.
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $stmt = $conn->prepare($sql);    
+    //Bind value.
+    $stmt->bindValue(':id', $_SESSION['user_id']);    
+    //Execute.
+    $stmt->execute();    
+    //Fetch row.
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if($user['userlvl'] == -1) {
         if($newpassword == $passwordverify) {
             $update = "UPDATE users SET password = :password WHERE id = :id";
             $stmt = $conn->prepare($update);    
@@ -37,29 +36,49 @@ if(isset($_POST['changepassword'])){
             $stmt->bindValue(':id', $_SESSION['user_id']);  
             //Execute.
             $stmt->execute();
-
-            if($user['userlvl'] == -1) {
-                $userlvl = "UPDATE users SET userlvl = 0 WHERE id = :id";
-                $stmt = $conn->prepare($userlvl);     
-                //Execute.
-                $stmt->execute();
-            }
+            $userlvl = "UPDATE users SET userlvl = 0 WHERE id = :id";
+            $stmt = $conn->prepare($userlvl);  
+            $stmt->bindValue(':id', $_SESSION['user_id']);   
+            //Execute.
+            $stmt->execute();
             ?>  
-            Password Updated returning to admin page in <span id="counter">5</span> seconds.
+            Password created returning to admin page in <span id="counter">5</span> seconds.
             <?php 
             header('Refresh: 4; URL=index.php');
         } else {
-            // Output message if New and Confirm password do not match
-            echo "New password and Confirm password do not match";
+        echo 'Passwords do not match';
         }
-     } else {
-         // Output message if current password is incorrect
-         echo "Cannot change password as your current password is incorrect";
-     }
+    } if($user['userlvl'] >= 0) {
+        if(password_verify($newpassword, $user['password'])) {
+            echo "New password cannot be the same as exsisting password";
+        } else if(password_verify($password, $user['password'])) {        
+            if($newpassword == $passwordverify) {
+                $update = "UPDATE users SET password = :password WHERE id = :id";
+                $stmt = $conn->prepare($update);    
+                //Bind value.
+                $stmt->bindValue(':password', password_hash($newpassword, PASSWORD_DEFAULT)); 
+                $stmt->bindValue(':id', $_SESSION['user_id']);  
+                //Execute.
+                $stmt->execute();
+                ?>  
+                Password Updated returning to admin page in <span id="counter">5</span> seconds.
+                <?php 
+                header('Refresh: 4; URL=index.php');
+            } else {
+                // Output message if New and Confirm password do not match
+                echo "New password and Confirm password do not match";
+            }
+        } else {
+            // Output message if current password is incorrect
+            echo "Cannot change password as your current password is incorrect";
+        }
+    }
 }
 ?>
 
 <h3>Change Password</h3>
+
+<form action="changepassword.php" method="post">
 
 <?php 
 $sql = "SELECT * FROM users WHERE id = :id";
@@ -74,15 +93,12 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if($user['userlvl'] == -1) {
     ?> <p>As this is your first login, you need to set your password</p> <?php
 } else { ?>
-<form action="changepassword.php" method="post">
 <div class="input-container">
     <i class="fa fa-key icon"></i>
     <input type="password" id="password" name="password" class="input-field" placeholder="Current Password" >
     <i toggle="#password" class="far fa-eye sp fa-1x toggle-password"></i>
 </div>
-<?php
-}
-?>
+<?php } ?>
 
 
 <div class="input-container">
