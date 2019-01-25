@@ -1,19 +1,28 @@
 <?php
 $page = "articles";
 include 'includes/overall/header.php'; 
-$limit = 5;
+//$limit = 5;
+
+switch($_GET["limit"]){
+    case "1": $limit = 1; break;
+    case "2": $limit = 2; break;
+    case "4": $limit = 4; break;
+    case "5": $limit = 5; break;
+    default: $limit = 5; break;
+}
 ?>
 <link rel="stylesheet" href="css/articles.css" />
         <center><h1>Articles</h1></center>
 
-       Which one is better for number of artices to display? (non-functioning at the moment) <br><br>
-    Display <a href="#">5</a> <a href="#">10</a> <a href="#">15</a> <a href="#">20</a> articles per page.<br>
+       Which one is better for number of artices to display? <br><br>
+    Display <a href="?limit=1"">1</a> <a href="?limit=2"">2</a> <a href="?limit=4"">4</a> <a href="?limit=5"">5</a> articles per page.<br>
+    <br>(non-functioning at the moment)<br>
     Display 
     <select name="articleNo">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="4">4</option>
     <option value="5" selected>5</option>
-    <option value="10">10</option>
-    <option value="15">15</option>
-    <option value="20">20</option>
     </select>
     articles per page.
 
