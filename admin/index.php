@@ -25,7 +25,7 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 <ul>
 <li class="shadow--3dp"><a href="#"><i class="fas fa-user-alt"></i><div>  Update details</div></a></li>
 <li class="shadow--3dp"><a href="changepassword.php"><i class="fas fa-key"></i><div>  Change Password</div></a></li>
-<li class="shadow--3dp"><a href="#"><i class="fas fa-address-card"></i><div>  Add Article</div></a></li>
+<li class="shadow--3dp"><a href="addarticle.php"><i class="fas fa-address-card"></i><div>  Add Article</div></a></li>
 <li class="shadow--3dp"><a href="logout.php"><i class="fas fa-sign-out-alt"></i><div>  Log out</div></a></li>
 </ul>
 
