@@ -29,6 +29,8 @@ if(isset($_POST['changepassword'])){
 
     if($user['userlvl'] == -1) {
         if($newpassword == $passwordverify) {
+
+            // Set password
             $update = "UPDATE users SET password = :password WHERE id = :id";
             $stmt = $conn->prepare($update);    
             //Bind value.
@@ -36,18 +38,22 @@ if(isset($_POST['changepassword'])){
             $stmt->bindValue(':id', $_SESSION['user_id']);  
             //Execute.
             $stmt->execute();
+
+            // Set user level to 0
             $userlvl = "UPDATE users SET userlvl = 0 WHERE id = :id";
             $stmt = $conn->prepare($userlvl);  
             $stmt->bindValue(':id', $_SESSION['user_id']);   
             //Execute.
             $stmt->execute();
-            ?>  
+            ?> 
+
             Password created returning to admin page in <span id="counter">5</span> seconds.
             <?php 
             header('Refresh: 4; URL=index.php');
         } else {
         echo 'Passwords do not match';
         }
+        
     } if($user['userlvl'] >= 0) {
         if(password_verify($newpassword, $user['password'])) {
             echo "New password cannot be the same as exsisting password";
