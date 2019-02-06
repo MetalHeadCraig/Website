@@ -28,8 +28,8 @@ a {
   color: inherit;
 }
 
-/* header and footer size is as important as the color */
-header, footer {
+/* header size is as important as the color */
+header {
   background-color: #937cfb;
   padding: 15px 15px;
   height: 72px;
@@ -180,11 +180,11 @@ i {
 }
 
 #podcast-call {
-  bottom: 85px;
+  bottom: 35px;
 }
 
 .podcast {
-  bottom: 85px;
+  bottom: 35px;
 }
 
 .fa-youtube {
@@ -219,7 +219,7 @@ i {
 footer {
   position: relative;
   display: block;
- 
+  padding: 15px 15px;
 }
 
 .footer {

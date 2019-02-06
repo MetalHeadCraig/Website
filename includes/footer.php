@@ -1,4 +1,4 @@
-<footer class="shadow--6dp">
+<footer>
     <div class="footer">
     &copy; 2019 Website designed, created and maintained by Craig Anning & Tim Saunders &nbsp;
     <a href="https://www.youtube.com/channel/UCKm3WCRV3zQoZtlC7KR2dJw"><i class="fab fa-youtube footer"></i></a>
