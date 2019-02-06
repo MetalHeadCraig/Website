@@ -52,12 +52,13 @@ header {
 header span {
   display: inline-block;
   flex-grow: 1;
-  padding: 5px 0;
+  padding: 1.5px 0 3px 0;
 }
 
 /* website title/name on left side of header */
 #name {
-  font-size: x-large;
+  font-size: xx-large;
+  font-family: "tele marines";
 }
 
 /* navigation button container */
@@ -66,7 +67,7 @@ header span {
   right: 10%;
   flex-grow: 1;
   display: inline-block;
-  padding: 7px 0;
+  padding: 3.5px 0;
 }
 
 /* navigation buttons themselves */
@@ -281,4 +282,9 @@ footer {
     display: block;
     padding: 10px 10px;
   }
+}
+
+@font-face {
+  font-family: "tele marines";
+  src: url(../fonts/telemarines1.ttf) format("truetype");
 }

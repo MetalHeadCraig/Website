@@ -9,7 +9,7 @@ include 'includes/overall/header.php';
 			<center><h3>Latest</h3></center>
 			<?php
 				try {
-					$data = $conn->query("SELECT * FROM article LIMIT 4")->fetchAll();
+					$data = $conn->query("SELECT * FROM article ORDER BY id DESC LIMIT 4")->fetchAll();
 
 					foreach ($data as $row) {
 						// start the column, shadow and card class for the articles

@@ -2,15 +2,19 @@
 $page = "articles";
 include 'includes/overall/header.php'; 
 
-switch($_GET["limit"]){
+if (!isset($_GET["limit"])) {
+    $limit = 5;
+}
+else {
+    switch($_GET["limit"]) {
     case "1": $limit = 1; break;
     case "2": $limit = 2; break;
     case "4": $limit = 4; break;
     case "5": $limit = 5; break;
     default: $limit = 5; break;
-}
+}}
 
-if (!isset($_GET["page"])){
+if (!isset($_GET["page"])) {
     $current = 1;
 } else {
     $current = $_GET["page"];
@@ -32,10 +36,10 @@ $pages = ceil($tarticles / $limit);
         <br>
     Display 
     <select name="articleNo" id="aLimit" onchange="display()">
-    <option value="1" <?php if($_GET["limit"] == 1){echo"selected";} ?> >1</option>
-    <option value="2" <?php if($_GET["limit"] == 2){echo"selected";} ?>>2</option>
-    <option value="4" <?php if($_GET["limit"] == 4){echo"selected";} ?>>4</option>
-    <option value="5" <?php if($_GET["limit"] == 5){echo"selected";} ?>>5</option>
+    <option value="1" <?php if(isset($_GET["limit"]) == 1){echo"selected";} ?>>1</option>
+    <option value="2" <?php if(isset($_GET["limit"]) == 2){echo"selected";} ?>>2</option>
+    <option value="4" <?php if(isset($_GET["limit"]) == 4){echo"selected";} ?>>4</option>
+    <option value="5" <?php if(isset($_GET["limit"]) == 5){echo"selected";} ?>>5</option>
     </select>
     articles per page.
     
