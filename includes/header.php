@@ -1,5 +1,5 @@
 <header class="shadow--6dp">
-				<span id="name">Some Video Game Based Title</span>
+				<span id="name">GAMeNeTiCs</span>
 					<container id="nav">
 					<button id="home" onclick="selectButton('#home')" <?php if ($page == "home") {?> class="active" <?php ;} ?>>
 							<a href="index.php"><i class="fas fa-home"></i> Home</a></button>
