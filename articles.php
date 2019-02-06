@@ -82,17 +82,18 @@ $conn = null;
 
 <div class="pagination">
     <u><a href="?page=1&limit=<?php echo $limit; ?>">First</a></u> 
-    <u><a href="#">Previous</a></u>
+    <u><a href="#"><<</a></u>
 
     <?php
         while($pageno <= $pages){
-            ?><u><a href="?page=<?php echo $pageno; ?>&limit=<?php echo $limit; ?>"<?php if ($current == $pageno){ ?> class="active" <?php ;} ?>>
+            ?>
+            <u><a href="?page=<?php echo $pageno; ?>&limit=<?php echo $limit; ?>"<?php if ($current == $pageno){ ?> class="active" <?php ;} ?>>
             <?php echo $pageno; ?></a></u> <?php
             $pageno++;
         } 
     ?>
 
-    <u><a href="#">Next</a></u> 
+    <u><a href="#">>></a></u> 
     <u><a href="?limit=<?php echo $limit; ?>&?page=<?php echo $pages; ?>">Last</a></u> 
 </div>
 
