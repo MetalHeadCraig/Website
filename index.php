@@ -21,7 +21,7 @@ include 'includes/overall/header.php';
 						// use the date class from the css file
 						echo "<span class=\"date\">";
 						// format and pull the date from the database
-						echo date('F d, Y. h:m A',strtotime($row['adate']));
+						echo date('M d, Y',strtotime($row['adate']));
 						// end the date class
 						echo "</span><br />";
 						// add a horizontal line

@@ -97,4 +97,4 @@ $(function() {
 // change class of list elements in Admin area on hover
 $('li').hover(
   function(){ $(this).toggleClass('shadow--8dp') }
-)
+);

@@ -4,6 +4,7 @@ include 'includes/overall/header.php';
 ?>
 <link rel="stylesheet" href="css/contact.css" />
     <h1>Contact Us</h1>
+
 	<div class="card shadow--3dp">
             <form method="Post">
                     <label>Name</label>
@@ -29,6 +30,7 @@ height"></textarea>
                 
             </form>
     </div>
+    
    <div class="card shadow--3dp">
        <p>Some stuff can go here</p>
        <br>
