@@ -1,3 +1,26 @@
 .column {
     width: 100%;
 }
+
+/* Pagination links */
+.pagination {
+    float: right;
+}
+
+.pagination a {
+    color: black;
+    padding-right: 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+  
+/* Style the active/current link */
+.pagination a.active {
+    background-color: #937cfb;
+    color: white;
+}
+  
+/* Add a background color on mouse-over */
+.pagination a:hover:not(.active) {
+    background-color: #03dac5;
+}
