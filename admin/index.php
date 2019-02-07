@@ -23,10 +23,10 @@ $data = $stmt->fetch(PDO::FETCH_ASSOC);
 <h3><span id="welcome"></span><?php echo $data['firstname'] . "!"; ?></h3>
 
 <ul>
-<li class="shadow--3dp"><a href="updatedetails.php"><i class="fas fa-user-alt"></i><div>  Update details</div></a></li>
-<li class="shadow--3dp"><a href="changepassword.php"><i class="fas fa-key"></i><div>  Change Password</div></a></li>
-<li class="shadow--3dp"><a href="addarticle.php"><i class="fas fa-address-card"></i><div>  Add Article</div></a></li>
-<li class="shadow--3dp"><a href="logout.php"><i class="fas fa-sign-out-alt"></i><div>  Log out</div></a></li>
+<a href="updatedetails.php"><li class="shadow--3dp"><i class="fas fa-user-alt"></i><div>  Update details</div></li></a>
+<a href="changepassword.php"><li class="shadow--3dp"><i class="fas fa-key"></i><div>  Change Password</div></li></a>
+<a href="addarticle.php"><li class="shadow--3dp"><i class="fas fa-address-card"></i><div>  Add Article</div></li></a>
+<a href="logout.php"><li class="shadow--3dp"><i class="fas fa-sign-out-alt"></i><div>  Log out</div></li></a>
 </ul>
 
 <?php
