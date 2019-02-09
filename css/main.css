@@ -91,6 +91,7 @@ button:hover {
   position: absolute;
   right: 1.5%;
   top: 2.5%;
+  max-height: 72px;
 }
 
 h1 {
@@ -167,11 +168,11 @@ i {
 }
 
 #social-call {
-  top: 85px;
+  top: 90px;
 }
 
 .social {
-  top: 85px;
+  top: 90px;
 }
 .social a, .podcast a {
   font-size: 34px;

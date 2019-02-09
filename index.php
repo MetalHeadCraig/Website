@@ -4,7 +4,7 @@ include 'includes/overall/header.php';
 ?>
 
 
-		<center><h1>Welcome to Show Name!</h1></center>
+		<center><h1>Welcome to Gamenetics!</h1></center>
 
 		<div class="row">
 			<center><h3>Latest</h3></center>

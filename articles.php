@@ -31,9 +31,6 @@ $pages = ceil($tarticles / $limit);
 <link rel="stylesheet" href="css/articles.css" />
         <center><h1>Articles</h1></center>
 
-       Which one is better for number of artices to display? <br><br>
-    Display <a href="?page=1&limit=1"><u>1</u></a> | <a href="?page=1&limit=2"><u>2</u></a> | <a href="?page=1&limit=4"><u>4</u></a> | <a href="?page=1&limit=5"><u>5</u></a> articles per page.<br>
-        <br>
     Display 
     <select name="articleNo" id="aLimit" onchange="display()">
     <option value="1" <?php if($limit == 1){echo"selected";} ?>>1</option>
@@ -43,7 +40,23 @@ $pages = ceil($tarticles / $limit);
     </select>
     articles per page.
     
-    
+
+    <div class="pagination">
+    <u><a href="?page=1&limit=<?php echo $limit; ?>">First</a></u> 
+    <u><a href="#"><<</a></u>
+
+    <?php
+        while($pageno <= $pages){
+            ?>
+            <u><a href="?page=<?php echo $pageno; ?>&limit=<?php echo $limit; ?>"<?php if ($current == $pageno){ ?> class="active" <?php ;} ?>>
+            <?php echo $pageno; ?></a></u> <?php
+            $pageno++;
+        } 
+    ?>
+
+    <u><a href="#">>></a></u> 
+    <u><a href="?limit=<?php echo $limit; ?>&?page=<?php echo $pages; ?>">Last</a></u> 
+    </div>    
 
     <div class = "row">
 
