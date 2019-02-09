@@ -9,4 +9,7 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
+		<link rel="icon" type="image/png" href="../images/gamenetics.png" sizes="16x16">  
+		<link rel="icon" type="image/png" href="../images/gamenetics.png" sizes="32x32">  
+		<link rel="icon" type="image/png" href="../images/gamenetics.png" sizes="96x96">  
 	</head>

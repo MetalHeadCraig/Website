@@ -31,7 +31,7 @@ window.onclick = function(event) {
     pmedia.style.display = "none";
     podcast.style.display = "block";
   }
-}
+};
   
   
 // Open all external links in new tabs
@@ -94,12 +94,12 @@ $(function() {
   });
 });
 
-// change class of list elements in Admin area on hover
-$('li').hover(
+// toggle shadow class of list elements in Admin area and call buttons in sidebar on hover
+$('li, #social-call, #podcast-call').hover(
   function(){ $(this).toggleClass('shadow--8dp') }
 );
 
 // toggle the class of the submit and reset buttons on the contact form
-$('input').hover(
+$('#reset, #submit').hover(
   function(){ $(this).toggleClass('shadow--6dp') }
 );

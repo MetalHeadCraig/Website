@@ -90,8 +90,9 @@ button:hover {
 #logo {
   position: absolute;
   right: 1.5%;
-  top: 2.5%;
-  max-height: 72px;
+  top: 0;
+  width: 75px;
+  height: auto;
 }
 
 h1 {
@@ -153,6 +154,7 @@ i {
   display: flex;
   flex-direction: column;
   right: 1.8%;
+  background-color: #ffffff;
 }
 
 #social-call, #podcast-call {
@@ -174,6 +176,7 @@ i {
 .social {
   top: 90px;
 }
+
 .social a, .podcast a {
   font-size: 34px;
   padding: 3px;
