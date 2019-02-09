@@ -12,26 +12,24 @@ include 'includes/overall/header.php';
 					$data = $conn->query("SELECT * FROM article ORDER BY id DESC LIMIT 4")->fetchAll();
 
 					foreach ($data as $row) {
-						// start the column, shadow and card class for the articles
-						echo "<div class=\"column shadow--3dp card\">";
-						// pull the article name from the database
-						echo "<h4>".$row['aname']."</h4>";
-						// This will eventually take in the user id and convert to their name and made clickable to go to profile
-						echo "<span style=\"float: left;\">Written by Admin</span>"; 
-						// use the date class from the css file
-						echo "<span class=\"date\">";
-						// format and pull the date from the database
-						echo date('M d, Y',strtotime($row['adate']));
-						// end the date class
-						echo "</span><br />";
-						// add a horizontal line
-						echo "<hr>";
-						// pull the article from the database
-						echo $row['article']."<br><br>";
-						// add link to read more
-						echo "<span style=\"float: right;\"><a href=\"article.php\">Read More</a></span>";
-						// end the column, shadow and card class for the articles
-						echo "</div>";
+						$sql = "SELECT firstname, lastname FROM users WHERE id = :id";
+						$stmt = $conn->prepare($sql);    
+							//Bind value.
+							$stmt->bindValue(':id', $row['author']);  
+							//Execute.
+							$stmt->execute();
+							$author = $stmt->fetch(PDO::FETCH_ASSOC);
+							?>
+				
+							<div class="column shadow--3dp card">
+							<h4> <?php echo $row['aname']; ?></h4>
+							<span style="float: left">Written by <a href="#"><?php echo $author['firstname'] . " " . $author['lastname']; ?></a></span>
+							<span class=date> <?php echo date('M d, Y',strtotime($row['adate'])); ?> </span><br>
+							<hr>
+							<?php echo $row['article'] . "<br><br>"; ?>
+							<span style="float: right"><a href="#">Read More</a></span>
+							</div>
+				<?php
 					}
 				}
 				catch(PDOException $e) {

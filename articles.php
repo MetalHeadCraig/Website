@@ -36,10 +36,10 @@ $pages = ceil($tarticles / $limit);
         <br>
     Display 
     <select name="articleNo" id="aLimit" onchange="display()">
-    <option value="1" <?php if(isset($_GET["limit"]) == 1){echo"selected";} ?>>1</option>
-    <option value="2" <?php if(isset($_GET["limit"]) == 2){echo"selected";} ?>>2</option>
-    <option value="4" <?php if(isset($_GET["limit"]) == 4){echo"selected";} ?>>4</option>
-    <option value="5" <?php if(isset($_GET["limit"]) == 5){echo"selected";} ?>>5</option>
+    <option value="1" <?php if($limit == 1){echo"selected";} ?>>1</option>
+    <option value="2" <?php if($limit == 2){echo"selected";} ?>>2</option>
+    <option value="4" <?php if($limit == 4){echo"selected";} ?>>4</option>
+    <option value="5" <?php if($limit == 5){echo"selected";} ?>>5</option>
     </select>
     articles per page.
     
