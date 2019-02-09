@@ -1,5 +1,5 @@
 <head>
-		<title>New Video Games admin Site</title>
+		<title>Gamenetics Admin Portal</title>
 		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">

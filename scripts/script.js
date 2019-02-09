@@ -98,3 +98,8 @@ $(function() {
 $('li').hover(
   function(){ $(this).toggleClass('shadow--8dp') }
 );
+
+// toggle the class of the submit and reset buttons on the contact form
+$('input').hover(
+  function(){ $(this).toggleClass('shadow--6dp') }
+);

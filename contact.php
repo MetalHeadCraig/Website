@@ -8,13 +8,13 @@ include 'includes/overall/header.php';
 	<div class="card shadow--3dp">
             <form method="Post">
                     <label>Name</label>
-                    <input name="Name" placeholder="John Doe">
+                    <input name="Name" placeholder="John Doe" required>
 
                     <label>Email</label>
-                    <input name="email" type="email" placeholder="johndoe@somewhere.com">
+                    <input name="email" type="email" placeholder="johndoe@somewhere.com" required>
                             
                     <label>Subject</label>
-                    <input name="subject" placeholder="I love your show">
+                    <input name="subject" placeholder="That thing in your thing" required>
                             
                     <label>Message</label>
                     <textarea name="message" placeholder="I am an expanding box.
@@ -22,7 +22,7 @@ I only expand vertically.
 I adjust based on the amount of text that overflows
 100px
 in
-height"></textarea>
+height" required></textarea>
 
                     <input id="reset" name="reset" type="reset" value="Reset">
 
