@@ -8,7 +8,7 @@ include 'includes/overall/header.php';
 	<div class="card shadow--3dp">
             <form method="Post">
                     <label>Name</label>
-                    <input name="Name" placeholder="John Doe" required>
+                    <input name="name" placeholder="John Doe" required>
 
                     <label>Email</label>
                     <input name="email" type="email" placeholder="johndoe@somewhere.com" required>
@@ -24,9 +24,28 @@ It's possible that it may not be related to your initial something but we will t
                     <input id="reset" name="reset" type="reset" value="Reset">
 
                     <input id="submit" name="submit" type="submit" value="Submit">
+
+<?php 
+
+
+ if(isset($_POST['submit'])){
+    $to = "info@gamenetics.uk"; // this is the mailbox for the contact form
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $headers = "From:" . $from;
+    
+    
+    mail($to, $subject, $message, $headers);
+
+    echo '<script type="text/javascript"> window.alert("Looks like that worked! We are as surprised as you are. A member of the team will contact you shortly."); {window.location.href = "index.php"}; </script>';
+    }
+
+ ?>
                 
             </form>
-    </div>
+   </div>
     
    <div class="card shadow--3dp">
        <p>If you can't use the above form for any reason please click on the relevant link below</p>
@@ -37,5 +56,7 @@ It's possible that it may not be related to your initial something but we will t
        to contact us.</p>
        <br>
     </div>
+
+ 
 
 <?php include 'includes/overall/footer.php'; ?>
