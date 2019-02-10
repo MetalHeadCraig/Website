@@ -27,8 +27,17 @@ include 'includes/overall/header.php';
 							<span style="float: left">Written by <a href="#"><?php echo $author['firstname'] . " " . $author['lastname']; ?></a></span>
 							<span class=date> <?php echo date('M d, Y',strtotime($row['adate'])); ?> </span><br>
 							<hr>
-							<?php echo $row['article'] . "<br><br>"; ?>
-							<span style="float: right"><a href="#">Read More</a></span>
+
+                            <?php
+                            $string = $row['article'];
+                            if (strlen($string) > 100) {
+                                $trimstring = substr($string, 0, 100). ' <a href="articles.php?article=' . $row['id'] . '">...Read More</a>';
+                            } else {
+                                $trimstring = $string;
+                            }
+                            echo $trimstring;                            
+                            ?>
+
 							</div>
 				<?php
 					}

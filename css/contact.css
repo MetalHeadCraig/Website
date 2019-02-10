@@ -64,3 +64,13 @@ textarea {
 .contact h3 {
     text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+    #submit {
+    position: initial;
+    }
+
+    #submit, #reset {
+        width: 100%;
+    }
+  }
