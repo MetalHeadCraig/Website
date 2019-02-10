@@ -14,15 +14,12 @@ include 'includes/overall/header.php';
                     <input name="email" type="email" placeholder="johndoe@somewhere.com" required>
                             
                     <label>Subject</label>
-                    <input name="subject" placeholder="That thing in your thing" required>
+                    <input name="subject" placeholder="Something about your thing" required>
                             
                     <label>Message</label>
-                    <textarea name="message" placeholder="I am an expanding box.
-I only expand vertically.
-I adjust based on the amount of text that overflows
-100px
-in
-height" required></textarea>
+                    <textarea name="message" placeholder="Ask us something special.
+Maybe, in future, we will reply to you about something.
+It's possible that it may not be related to your initial something but we will try" required></textarea>
 
                     <input id="reset" name="reset" type="reset" value="Reset">
 
@@ -32,11 +29,12 @@ height" required></textarea>
     </div>
     
    <div class="card shadow--3dp">
-       <p>Some stuff can go here</p>
+       <p>If you can't use the above form for any reason please click on the relevant link below</p>
+       <p>For information about us/the show/something else please <u><a href="mailto:info@gamenetics.uk">click here</a></u> 
+       to contact us and we will get back to you as soon as possible.</p>
        <br>
-       <br>
-       <p>Press contact</p>
-       <br>
+       <p>If you are contacting us regarding any media enquiries please <u><a href="mailto:media@gamenetics.uk">click here</a></u> 
+       to contact us.</p>
        <br>
     </div>
 

@@ -5,27 +5,24 @@ include 'includes/overall/header.php';
     
     <h1>About Us</h1>
 	<div class="card shadow--3dp">
-	    <p>Hello everybody. We have a radio show thay can be listened to on the radio.
-        We also have a Youtube show that can be watched on Youtube and a podcast available in every place you can get your podcast from.</p>
-        <p>The show is a lot of shit spoken by friends that wind eachother up and fuck around.</p>
+	    <p>Hello everybody. We have a radio show that can be listened to on the radio. Funny that.
+        We also have a Youtube show that can be watched on Youtube. Quelle surprise.</p>
+        <p>The show is a conversation between 3 friends that wind eachother up and joke around. 
+        Whilst we discuss video games across all platforms (exepct for THOSE ones).</p>
+        <p>We try to keep our listeners up to date with the latest information on games, consoles, developers, peripherals and everything else that you can think off relating to games.
+        Generally speaking we will stay on topic but theres a very good chance we will go off on long tangents. If for any reason you do not wish to join us on these journeys (<i>regulars know how these go</i>) 
+        feel free to skip ahead 5 seconds, as required, though we do hope you will stay with us during our waffles of interest</p>
         <br>
-        <p>Nobody knows the trouble I've seen,</p>
+        <h3>The most minute team description you have ever read</h3>
+        <p>Craig and Tim have almost 20 years of video game journalism and broadcasting between them with Cameron playing 'The New Guy'.</p>
         <br>
-        <p>Nobody knows my sorrow.</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p>Still here?</p>
     </div>
-   <div class="card shadow--3dp">
-       <h3>Podcasts go here</h3>
-        <p>This is where we place the podcast links/widget for listening to the one that generates the most income, like this one below</p>
-        <p>&nbsp;</p>
+  <!-- <div class="card shadow--3dp">
+       <h3>We podcast too</h3>
+        <p>We also podcast our radio show and YouTube show in all the normal places to get your podcasts from, like this place below</p>
+        <br>
         <iframe src="https://open.spotify.com/embed/show/3j9nu2qpJrUxEXp5qMudM7" width="500" height="280" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    </div>
+    </div> -->
     <br>
     
 <?php include 'includes/overall/footer.php'; ?>

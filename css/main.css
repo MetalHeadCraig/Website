@@ -108,6 +108,12 @@ h1 {
 /* Float articles and social feed side by side */
 .column {
   float: left;
+  width: 100%;
+  padding: 10px;
+}
+
+.scolumn {
+  float: left;
   width: 48%;
   padding: 10px;
 }
@@ -161,7 +167,7 @@ i {
   border-radius: 50%;
   background-color: #03dac5;
   padding: 15px;
-  right: 1.5%;
+  right: 2.8%;
   position: fixed;
   cursor: pointer;
   width: 50px;
@@ -212,7 +218,7 @@ i {
 .fa-google {
   color: #3B5998;
 }
-.fa-podcast {
+.fa-apple {
   color: #D56DFB;
 }
 
