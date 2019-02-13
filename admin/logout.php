@@ -1,5 +1,6 @@
 <?php
 $page = "logout";
+include 'includes/cache.php';
 include 'includes/header.php';
 
 // remove all session variables

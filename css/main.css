@@ -59,9 +59,6 @@ header span {
 #name {
   font-size: xx-large;
   font-family: "tele marines";
-
-  flex-grow: 1;
-  padding: 3.5px 0;
 }
 
 /* navigation button container */
@@ -164,6 +161,7 @@ i {
   flex-direction: column;
   right: 1.8%;
   background-color: #ffffff;
+  z-index: 1;
 }
 
 #social-call, #podcast-call {
@@ -241,6 +239,14 @@ footer {
   text-align: center;
 }
 
+footer span {
+    color: #cccccc;
+    font-size: xx-small;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
 
 /* all shadow styles courtesy of Scott Roa */
 .shadow--2dp {
@@ -307,5 +313,5 @@ footer {
 
 @font-face {
   font-family: "tele marines";
-  src: url(../fonts/telemarines1.ttf) format("truetype");
+  src: url(../fonts/telemarines1.woff2) format("woff2");
 }

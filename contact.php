@@ -1,5 +1,6 @@
 <?php 
 $page = "contact";
+include 'includes/cache.php';
 include 'includes/overall/header.php'; 
 ?>
 <link rel="stylesheet" href="css/contact.css" />
@@ -36,7 +37,7 @@ It's possible that it may not be related to your initial something but we will t
     $message = $name . " wrote the following:" . "\n\n" . $_POST['message'];
     $headers = "From:" . $from;
     
-    
+
     mail($to, $subject, $message, $headers);
 
     echo '<script type="text/javascript"> window.alert("Looks like that worked! We are as surprised as you are. A member of the team will contact you shortly."); {window.location.href = "index.php"}; </script>';

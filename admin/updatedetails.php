@@ -1,5 +1,6 @@
 <?php
 $page = "Update";
+include 'includes/cache.php';
 include 'includes/header.php';
 
 //check if user is logged in

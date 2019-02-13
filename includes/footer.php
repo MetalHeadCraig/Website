@@ -5,6 +5,8 @@
     <a href="https://twitter.com/snvgs"><i class="fab fa-twitter footer"></i></a>
     <a href="https://en-gb.facebook.com/pg/SNVGS"><i class="fab fa-facebook-square footer"></i></a>
     <a href="https://www.instagram.com/"><i class="fab fa-instagram footer"></i></a>
-    </div>
+<span><a  href="../privacypolicy.html" target="_blank">Privacy Policy</a></span>    
+</div>
 </footer>
 
+	

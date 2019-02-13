@@ -1,5 +1,6 @@
 <?php
 $page = "Login";
+include 'includes/cache.php';
 include 'includes/header.php';
 
 //If the POST var "login" exists (our submit button), then we can
