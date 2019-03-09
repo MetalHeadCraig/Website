@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "gameneti_game";
-$password = "NewGameShow2019";
+$username = "root";
+$password = "root";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=gameneti_game", $username, $password);
