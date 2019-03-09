@@ -1,0 +1,11 @@
+#php_value display_errors On
+#php_flag magic_quotes 1
+#php_flag magic_quotes_gpc 1
+#php_value mbstring.http_input auto
+#php_value date.timezone Europe/London
+
+# Turn on the rewriting engine
+RewriteEngine On    
+
+ # Handle requests for "articles"
+RewriteRule    ^.php?article=/?$    /    [NC,L]   

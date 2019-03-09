@@ -1,49 +1,109 @@
 <?php
-$page = "Profile";
-    $last_modified_time = filemtime($file); 
-    $etag = md5_file($file); 
-
-    header("Last-Modified: ".gmdate("D, d M Y H:i:s", $last_modified_time)." GMT"); 
-    header("Etag: $etag"); 
-
-    if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $last_modified_time || 
-        trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag) { 
-        header("HTTP/1.1 304 Not Modified"); 
-    exit; 
-} 
-?
 include 'includes/cache.php';
+$page = "Profile";
 include 'includes/overall/header.php';
-?>
-<link rel="stylesheet" href="css/profile.css" />
 
-    <h1>Full Name goes here</h1>
+if (isset ($_GET['firstname']) && ($_GET['lastname'])) {
+    
+$sql = "SELECT * FROM users WHERE firstname = :first AND lastname = :last";
+$stmt = $conn->prepare($sql);    
+//Bind value.
+$stmt->bindValue(':first', $_GET['firstname']); 
+$stmt->bindValue(':last', $_GET['lastname']);
+//Execute.
+$stmt->execute();    
+//Fetch row.
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM profile WHERE userid = :id";
+$stmt = $conn->prepare($sql);    
+//Bind value.
+$stmt->bindValue(':id', $user['id']); 
+//Execute.
+$stmt->execute();    
+//Fetch row.
+$profile = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
+    <h1><?php echo $user['firstname'] . " " . $user['lastname']; ?></h1>
 
     <div class="card shadow--3dp">
     
     <div class="details">
-
     <div class="bio card shadow--3dp">
+        
 
+        
     <div class="profileimage shadow--3dp">
-    An image you chose goes here
+    <?php
+        if (isset($profile['profilepic']) && !empty($profile['profilepic'])) {
+            echo "<img src='images/profile/" . $profile['profilepic'] . "' width='100%' height='auto'></a>";
+        } else {
+            echo "<img src='images/profile/profile-feature-template-1.jpg' width ='100%' height = 'auto'></a>";
+        }
+?>
     </div>
 
     <br>
-                    Mini Bio content will go here and be related to the information you gave us.
+    
+        <?php
+        if (isset($profile['bio']) && !empty($profile['bio'])) {
+            echo $profile['bio'];
+        } else {
+            echo "This information has not been provided.";
+        }
+?>
 
-                    This is where I should talk a load of crap but I don't want to.
+    <br><br>
+
     </div>
 
     <div class="articles-by card shadow--3dp">
-        Maybe this area holds links to articles written by the owner of this profile.
-        maybe it shows their social media links in the form of images too?
+    
+    <h3><?php echo $user['firstname']; ?> has written these awesome articles you should totally check out!</h3>
+    
+    <?php
+    $sql = "SELECT COUNT(id) FROM article WHERE author = :userid";
+    $stmt = $conn->prepare($sql);
+    //Bind value.
+    $stmt->bindValue(':userid', $user['id']);  
+    //Execute.
+    $stmt->execute();
+    $articleno = $stmt->fetchColumn();
 
-        This should sit beneath everything else but for some reason I cannot focus tonight.
+    if ($articleno == 0) { ?>
+    <p>Oh dear! it looks like <?php echo $user['firstname'] ?> hasn't written any articles yet.<br>
+    Maybe you should send an email to try and get them to write atleast 1.</p>
+    <?php 
+    } else { 
+
+    $sql = "SELECT * FROM article WHERE author = :userid ORDER BY id DESC";
+    $stmt = $conn->prepare($sql);
+    //Bind value.
+    $stmt->bindValue(':userid', $user['id']);  
+    //Execute.
+    $stmt->execute();
+    $articles = $stmt->fetchAll();
+    
+   foreach ($articles as $article) { ?>
+       <h5><a href="articles.php?article=<?php echo $article['id']; ?>"> <?php echo $article['aname']; ?></a></h5>
+       <?php
+   }
+    }
+    
+    ?>
+
     </div>
 
     </div>
 
     </div>
+    <?php
+} else {
+   echo "This is a Custom 404";
+}
+?>
+
 
 <?php include 'includes/overall/footer.php'; ?>

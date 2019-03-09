@@ -62,6 +62,7 @@ if(isset($_POST['login'])){
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
     <input type="text" id="email" name="email" class="input-field" placeholder="Email">
+    <i class="fa fa-envelope eright"></i>
   </div>
 
   <div class="input-container">

@@ -2,6 +2,7 @@
 $page = "Add article";
 include 'includes/cache.php';
 include 'includes/header.php';
+include 'includes/wysiwyg.php';
 
 //check if user is logged in
 if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
@@ -39,11 +40,11 @@ catch(PDOException $e)
 <form action="addarticle.php" method="post">
 
 <div class="input-container">
-    <input type="text" name="name" class="input-field" placeholder="Article Name" >
+    <input type="text" name="name" class="input-field" placeholder="Article Title" >
 </div>
 
 <div class="input-container">
-    <textarea name="article" class="input-field" rows="10" cols="30"> </textarea>
+    <textarea id="local-upload" name="article" class="input-field" rows="30" cols="30"> </textarea>
 </div>
 <button class="btn" type="submit" name="addarticle">Add article</button>
 

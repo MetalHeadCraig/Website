@@ -22,6 +22,7 @@ window.onclick = function(event) {
     social.style.display = "block";
   }
 
+
   if (event.target == podcast) {
     pmedia.style.display = "block";
     podcast.style.display = "none";    
@@ -31,8 +32,7 @@ window.onclick = function(event) {
     pmedia.style.display = "none";
     podcast.style.display = "block";
   }
-};
-  
+}; 
   
 // Open all external links in new tabs
 $('a').each(function() {
@@ -95,20 +95,11 @@ $(function() {
 });
 
 // toggle shadow class of list elements in Admin area and call buttons in sidebar on hover
-$('li, #social-call, #podcast-call').hover(
+$('.adminpanel li, #social-call, #podcast-call').hover(
   function(){ $(this).toggleClass('shadow--8dp') }
 );
 
-// toggle the class of the submit and reset buttons on the contact form
-$('#reset, #submit').hover(
+// toggle shadow class of reset and submit buttons on hover
+$('#reset, #send').hover(
   function(){ $(this).toggleClass('shadow--6dp') }
 );
-
-// facebook garbage here
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));

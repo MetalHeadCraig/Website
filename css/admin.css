@@ -36,13 +36,12 @@ ul a:active {
 
   /* Style the input container */
 .input-container {
-    display: flex;
     width: 100%;
     margin-bottom: 15px;
   }
   
   /* Style the form icons */
-  .icon, .sp {
+  .icon {
     padding: 10px;
     background: dodgerblue;
     color: white;
@@ -50,9 +49,18 @@ ul a:active {
     text-align: center;
     border-radius: 5px;
   }
+  
+  .eright {
+    position: relative;
+    right: 5%;
+    color: navajowhite;
+  }
 
   .sp {
     cursor: pointer;
+    position: relative;
+    right: 5%;
+    color: navajowhite;
   }
   
   /* Style the input fields */
@@ -81,11 +89,4 @@ ul a:active {
   
   .btn:hover {
     opacity: 1;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    width: 98.8%;
   }

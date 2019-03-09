@@ -45,7 +45,7 @@ textarea {
     overflow-y: hidden;
 }
 
-#submit, #reset {
+#send, #reset {
     width: 127px;
     height: 38px;
     border: none;
@@ -55,7 +55,7 @@ textarea {
     background-color: #BEBEBE
 }
 
-#submit {
+#send {
     position: absolute;
     right: 32px;
     bottom: 10px;
@@ -65,12 +65,16 @@ textarea {
     text-align: center;
 }
 
+.card {
+    min-height: 240px;
+}
+
 @media screen and (max-width: 600px) {
-    #submit {
+    #send {
     position: initial;
     }
 
-    #submit, #reset {
+    #send, #reset {
         width: 100%;
     }
   }

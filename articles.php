@@ -13,7 +13,7 @@ if (isset($_GET["article"])) {
     $stmt->execute();
     $article = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "SELECT firstname, lastname FROM users WHERE id = :id";
+    $sql = "SELECT * FROM users WHERE id = :id";
     $stmt = $conn->prepare($sql);    
     //Bind value.
     $stmt->bindValue(':id', $article['author']);  
@@ -24,10 +24,10 @@ if (isset($_GET["article"])) {
 
 <div class="shadow--3dp card">
     <h4> <?php echo $article['aname']; ?></h4>
-    <span style="float: left">Written by <a href="#"><?php echo $author['firstname'] . " " . $author['lastname']; ?></a></span>
+    <span style="float: left">Written by <a href="/<?php echo $author['firstname'] . "-" . $author['lastname']; ?>"><?php echo $author['firstname'] . " " . $author['lastname']; ?></a></span>
     <span class=date> <?php echo date('M d, Y',strtotime($article['adate'])); ?> </span><br>
     <hr>
-    <?php echo preg_replace('/\n/', '<br>',$article['article']) . "<br><br>"; ?>
+    <?php echo $article['article'] . "<br><br>"; ?>
     </div>
 <?php
 } else {
@@ -37,10 +37,10 @@ if (!isset($_GET["limit"])) {
 }
 else {
     switch($_GET["limit"]) {
-    case "1": $limit = 1; break;
-    case "2": $limit = 2; break;
-    case "4": $limit = 4; break;
     case "5": $limit = 5; break;
+    case "10": $limit = 10; break;
+    case "15": $limit = 15; break;
+    case "20": $limit = 20; break;
     default: $limit = 5; break;
 }}
 
@@ -58,15 +58,14 @@ $tarticles = $conn->query("SELECT count(1) FROM article")->fetchColumn();
 $pages = ceil($tarticles / $limit);
 
 ?>
-<link rel="stylesheet" href="css/articles.css" />
         <center><h1>Articles</h1></center>
 
     Display 
     <select name="articleNo" id="aLimit" onchange="display()">
-    <option value="1" <?php if($limit == 1){echo"selected";} ?>>1</option>
-    <option value="2" <?php if($limit == 2){echo"selected";} ?>>2</option>
-    <option value="4" <?php if($limit == 4){echo"selected";} ?>>4</option>
     <option value="5" <?php if($limit == 5){echo"selected";} ?>>5</option>
+    <option value="10" <?php if($limit == 10){echo"selected";} ?>>10</option>
+    <option value="15" <?php if($limit == 15){echo"selected";} ?>>15</option>
+    <option value="20" <?php if($limit == 20){echo"selected";} ?>>20</option>
     </select>
     articles per page.
     
@@ -96,7 +95,7 @@ try {
     $data = $conn->query("SELECT * FROM article ORDER BY id DESC LIMIT $limit OFFSET $offset")->fetchAll();
 
     foreach ($data as $row) {
-        $sql = "SELECT firstname, lastname FROM users WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE id = :id";
         $stmt = $conn->prepare($sql);    
             //Bind value.
             $stmt->bindValue(':id', $row['author']);  
@@ -107,11 +106,19 @@ try {
 
             <div class="column shadow--3dp card">
             <h4> <?php echo $row['aname']; ?></h4>
-            <span style="float: left">Written by <a href="#"><?php echo $author['firstname'] . " " . $author['lastname']; ?></a></span>
+            <span style="float: left">Written by <a href="/<?php echo $author['firstname'] . "-" . $author['lastname']; ?>"><?php echo $author['firstname'] . " " . $author['lastname']; ?></a></span>
             <span class=date> <?php echo date('M d, Y',strtotime($row['adate'])); ?> </span><br>
             <hr>
-            <?php echo preg_replace('/\n/', '<br>',$row['article']) . "<br><br>"; ?>
-            <span style="float: right"><a href="#">Read More</a></span>
+            <?php
+            $string = $row['article'];
+            $string = preg_replace("/<img[^>]+\>/i", "<i>(There is an image here, you should click Read More to see it.) </i>", $string);
+            if (strlen($string) > 600) {
+                $trimstring = substr($string, 0, 600). '...<a href="articles.php?article=' . $row['id'] . '">Read More</a>';
+            } else {
+                $trimstring = $string;
+            }
+            echo $trimstring;                            
+            ?>
             </div>
 <?php
     }

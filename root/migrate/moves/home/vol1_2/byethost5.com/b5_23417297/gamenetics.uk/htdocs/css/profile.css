@@ -1,0 +1,15 @@
+.details {
+    padding: 10px;
+}
+
+.profileimage {
+    height: 100px;
+    width: 100px;
+    border-radius: 7px;
+    padding-top: 15px;
+}
+
+.articles-by {
+    width: 100%;
+}
+	

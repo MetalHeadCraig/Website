@@ -1,0 +1,50 @@
+.details {
+    padding: 10px;
+    display: flex;
+}
+
+.card.card {
+    width: 100%;
+}
+
+.profileimage {
+    height: 100px;
+    width: 100px;
+    border-radius: 7px;
+}
+
+form {
+    position: relative;
+    text-align: left;
+    display: flex;
+    flex-flow: column;
+}
+
+.profileimage button {
+    background-color: darkred;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.profileimage button:hover {
+    background-color: firebrick;
+}
+
+label {
+    margin-top: 10px;
+}
+
+label, input, textarea {
+    margin-left: inherit;
+}
+
+input {
+    width: 50%;
+}
+
+input, textarea {
+    min-height: 25px;
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: floralwhite;
+}
