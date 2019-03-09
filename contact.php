@@ -32,7 +32,7 @@ It's possible that it may not be related to your initial something but we will t
     
     if (isset($_POST['g-recaptcha-response'])){
     // reCaptcha info
-    $key = "6LdJG5QUAAAAAO1_3rWU0vlXMBFAqfsW9pRgRZa_";
+    $key = "SECRET_KEY_HERE";
     $url = "https://www.google.com/recaptcha/api/siteverify";
     $captcha = $_POST['g-recaptcha-response'];
     
@@ -42,7 +42,7 @@ It's possible that it may not be related to your initial something but we will t
     
     // phpMail
     if ($data = json_decode($recaptcha_response, true)){
-    $to = "info@gamenetics.uk"; // this is the mailbox for the contact form
+    $to = "EMAIL_ADDRESS_HERE"; // this is the mailbox for the contact form
     $from = $_POST['email']; // this is the sender's Email address
     $name = $_POST['name'];
     $subject = $_POST['subject'];
