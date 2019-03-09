@@ -3,7 +3,7 @@
     display: flex;
 }
 
-.card.card {
+.card.fields {
     width: 100%;
 }
 
@@ -11,6 +11,8 @@
     height: 100px;
     width: 100px;
     border-radius: 7px;
+    position: relative;
+    top: 10px;
 }
 
 form {
@@ -20,14 +22,16 @@ form {
     flex-flow: column;
 }
 
-.profileimage button {
-    background-color: darkred;
+.profileimage label {
+    background-color: #bebebe;
     margin-top: 2px;
     cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
 }
 
-.profileimage button:hover {
-    background-color: firebrick;
+.profileimage input, .profileimage button {
+    display: none;
 }
 
 label {
@@ -47,4 +51,44 @@ input, textarea {
     border-radius: 5px;
     padding-left: 5px;
     background-color: floralwhite;
+}
+
+textarea {
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+#submit  {
+    border-radius: 8px;
+    width: 127px;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #BEBEBE;
+}
+
+#submit:hover, .profileimage label:hover {
+    background-color: #9e9e9e;
+}
+
+.socialmedia label {
+    display: block;
+}
+
+.socialmedia i {
+    font-size: xx-large;
+}
+
+.socialmedia .fa-twitter {
+   color: #1da1f2;
+}
+.socialmedia .fa-facebook-square {
+   color: #3b5998;
+}
+.socialmedia .fa-instagram {
+   color: #c32aa3;
+}
+.socialmedia .fa-twitch {
+    color: #6441A4;
 }

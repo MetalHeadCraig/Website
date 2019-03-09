@@ -120,28 +120,41 @@ $profile = $stmt->fetch(PDO::FETCH_ASSOC);
     <div class="details">
 
     <div class="profileimage shadow--3dp">
-    An image you chose goes here, max size is 5 MB
+    <?php
+        if (isset($profile['profilepic']) && !empty($profile['profilepic'])) {
+            echo "<a><img src='images/profile/" . $profile['profilepic'] . "' width='100%' height='auto'></a>";
+        } else {
+            echo "An image you chose goes here, max size is 5 MB";
+        }
+?>
     <form method="post" enctype="multipart/form-data">
-    <input type="file" name="profilepic" id="profilepic">
-    <button type ="submit" name="profilepic">Update</button>
+    <label><input type="file" name="profilepic" id="profilepic">Browse for image</label>
+    <label><button type ="submit" name="profilepic"></button>Update image</label>
     </form>
     </div>
 
-    <div class="card shadow--3dp">
+    <div class="fields card shadow--3dp">
         <form method="Post">
                     <label>Full Name</label>
                     <input name="Name" placeholder="John Doe" value="<?php echo $data['firstname'] . " " . $data['lastname']; ?>">
 
                     <label>Email</label>
                     <input name="email" type="email" value="<?php echo $data['email']; ?>">
+
+                    <div class="socialmedia">
+                    <label><i class="fab fa-facebook-square footer"></i><input name="facebook" placeholder="gamenetics.uk"><label>
+
+                    <label><i class="fab fa-twitter footer"></i><input name="twitter" placeholder="gamenetics.uk"><label>
+
+                    <label><i class="fab fa-instagram footer"></i><input name="instagram" placeholder="gamenetics.uk"><label>
+
+                    <label>Mixer.com<input name="mixer" placeholder="gamenetics.uk"><label>
+
+                    <label><i class="fab fa-twitch"></i><input name="twitch" placeholder="gamenetics.uk"><label>
+                    </div>
                                                 
                     <label>Mini Bio</label>
-                    <textarea name="bio" placeholder="I am an expanding box.
-I only expand vertically.
-I adjust based on the amount of text that overflows
-100px
-in
-height" value="<?php echo $profile['bio']; ?>"></textarea>
+                    <textarea name="bio" placeholder="Please enter a short description of who you are here" value="<?php echo $profile['bio']; ?>"></textarea>
 
                     <input id="submit" name="update" type="submit" value="Update Details">
                 
